@@ -9,16 +9,16 @@ distributeGifts(packOfGifts, reindeers) // 2
 
 
 function distributeGifts(packOfGifts, reindeers) {
-  let pesoRenos = calcular(packOfGifts, 1);
-  let pesoRegalos = calcular(reindeers, 2);
-  
+  let pesoRenos = 0;
+  packOfGifts.forEach(element => {
+    pesoRenos += element.length;
+  });
+
+  let pesoRegalos = 0;
+  reindeers.forEach(element => {
+    pesoRegalos += element.length * 2;
+  });
+
+
   return parseInt(pesoRegalos / pesoRenos)
 }
-
-function calcular(array, mult, peso = 0) {
-  array.forEach(element=> {
-    peso += element.length * mult;
-  });
-  return peso;
-}
-

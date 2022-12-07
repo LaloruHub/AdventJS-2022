@@ -14,15 +14,14 @@ function wrapping(gifts) {
   let regalos = [];
 
   gifts.forEach(element => {
-    let envoltorio = "*";
-    let length = element.length;
-    length.forEach(e => {
-      envoltorio += "*"
-      console.log("🚀 ~ file: script.js:15 ~ wrapping ~ e", e)
-    });
+    let envoltorio = "*", j = 0;
 
+    do{
+      envoltorio += "*";
+      j++;
+    } while(j <= element.length);
+  
     regalos.push(envoltorio + "\n" + "*" + element + "*" + "\n" + envoltorio);
   });
-
   return regalos;
 }

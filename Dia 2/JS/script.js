@@ -13,8 +13,8 @@ function countHours(year, holidays) {
   let diasDeFiesta = 0;
 
   holidays.forEach(element => {
-    const date = new Date(year, element.split("/", 2)[0] - 1, element.split("/", 2)[1]).getDay();
-  diasDeFiesta += (date != 0 && date != 6) ? 2 : 0;
+    const date = new Date(year, element.split("/", 2)[0] - 1, element.split("/", 2)[1]);
+  diasDeFiesta += (date.getDay() != 0 && date.getDay() != 6) ? 2 : 0;
   });
 
   return diasDeFiesta;
